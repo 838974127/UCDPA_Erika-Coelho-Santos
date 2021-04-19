@@ -120,6 +120,25 @@ print(TRADEGOODSERV_IMP)
 
 print(TRADEGOODSERV_EXP.merge(TRADEGOODSERV_IMP, left_on='LOCATION_EXP', right_on='LOCATION_IMP'))
 
+# EMERGING TWO DATAFRAMES
+# EXPORTS & IMPORTS - TRADE OF GOODS AND SERVICES IN IRELAND - IRL - MEASURE = PC_GDP.
+# CROP PRODUCTION IN IRELAND - IRL - MEASURE = PC_GDP.
+
+import pandas as pd
+cropproduction = pd.read_csv(r"C:\CSV FILES\Crop productionWheat  Maize  Rice  Soybean, Tonneshectare, 2010 – 2021.csv")
+print(cropproduction.head(51))
+
+import pandas as pd
+Exports = pd.read_csv(r"C:\CSV FILES\Trade in goods and servicesExports.csv")
+print(Exports.head(51))
+
+import pandas as pd
+Imports = pd.read_csv(r"C:\CSV FILES\Trade in goods and servicesImports.csv")
+print(Imports.head(51))
+
+pd.concat([cropproduction,Exports,Imports], axis=0)
+
+
 #USING FUNCTIONS TO CREATE REUSABLE CODE
 
 df = pd.DataFrame({"EXP_VALUE_X_TIME": [103.055276, 103.715811, 104.516642, 103.690094, 109.839478, 121.955801, 121.205286, 119.730554, 122.298015, 126.067883, 127.639874, 104.516642, 103.690094], "B": [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2012, 2013]})
